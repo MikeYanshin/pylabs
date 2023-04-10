@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Архив статей</title>
+  <link rel="stylesheet" href="/static/css/article.css">
+</head>
+
+<body>
+  <div class="header">
+    <a class="link" href="http://127.0.0.1:8000">Все статьи</a>
+    {% load static %}
+    <img src=" {% static 'img/logo.png' %}" alt="Здесь должно быть изображение" />
+  </div>
+  <div class="archive">
+    <div class="one-post">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <div class="article-info">
+        <div class="article-author">{{ post.author.username }}</div>
+        <div class="article-created- date">{{ post.created_date }}</div>
+      </div>
+      <p class="article-text">{{ post.get_excerpt }}</p>
+    </div>
+  </div>
+</body>
+
+</html>

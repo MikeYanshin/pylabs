@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Авторизация</title>
+  <link rel="stylesheet" href="/static/css/article.css">
+</head>
+
+<body>
+  <div class="content">
+    <h1>Авторизация</h1>
+    <form class="registration" method="POST">{% csrf_token %}
+      <input type="text" name="username" placeholder="Имя пользователя" value="{{ form.username }}">
+      <input type="text" name="password" placeholder="Пароль пользователя" value="{{ form.password }}">
+      <input type="submit" value="Войти">
+    </form>
+    {{ form.errors }}
+  </div>
+</body>
+
+</html>
